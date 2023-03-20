@@ -9,8 +9,9 @@
 namespace ordered_reference {
 using std::reference_wrapper;
 using std::strong_ordering;
+using std::three_way_comparable;
 
-template <typename T, std::three_way_comparable U> struct ordered_reference_t {
+template <typename T, three_way_comparable U> struct ordered_reference_t {
   reference_wrapper<T> reference;
   U _weight;
 
