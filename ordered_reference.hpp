@@ -13,12 +13,14 @@ using std::three_way_comparable;
 
 template <typename T, three_way_comparable U> struct ordered_reference_t {
   reference_wrapper<T> reference;
-  U _weight;
 
   friend constexpr strong_ordering operator<=>(const ordered_reference_t &lhs,
                                                const ordered_reference_t &rhs) {
     return lhs._weight <=> rhs._weight;
   }
+
+private:
+  U _weight;
 };
 } // namespace ordered_reference
 #endif
